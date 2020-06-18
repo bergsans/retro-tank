@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RETRO TANK</title>
+    </head>
+    <body>
+        <style>
+            @font-face {
+                font-family: ARCADECLASSIC;
+                src: url(ARCADECLASSIC.TTF);
+            }
+            body {
+                background-color: #fffff8;
+                height: 100vh;
+                margin: 0;
+                padding: 2rem;
+                color: #111;
+                text-shadow: 0 0 5px #c8c8c8;
+                overflow: hidden;
+            }
+            body::after {
+                content: '';
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: repeating-linear-gradient(
+                    0deg,
+                    rgba(0, 0, 0, 0.15),
+                    rgba(0, 0, 0, 0.15) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+                pointer-events: none;
+            }
+            canvas {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+        <canvas id="game" width="480" height="480"></canvas>
+        <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+    </body>
+</html>
